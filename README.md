@@ -4,11 +4,14 @@
 
 {Provide a description the web app that you wrote. Describe how to start a test server on your computer and what website to open up to see the first page of the app.}
 
-{Describe your purpose for writing this software.}
+This app is continuing to work on my full stack site that I am creating for my comic website. This site has a MySQL database, a C# API and a TypeScript front end that runs with React. 
 
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running (starting the server and navigating through the web pages) and a walkthrough of the code.}
+The goal is to create three pages. A landing or home page that will display a comic. A page with information about the characters and a page with general information about the comic itself. 
 
 [Software Demo Video](http://youtube.link.goes.here)
+
+## How to start
+To run: start the C# API, then `npm install` and `npm start`, and open http://localhost:5173
 
 # Web Pages
 
@@ -19,13 +22,15 @@
 ## Tools
 - [Node.js](https://nodejs.org/) (v26.4.0): runs JavaScript tools on my computer
 - [npm](https://www.npmjs.com/) (11.17.0): installs packages
-- [Vite](https://vite.dev/) (8.3.4): dev server and build tool
+- [Vite](https://vite.dev/) (8.3.5): dev server and build tool
 - [ESLint](https://eslint.org/) (10.14.0): checks code for mistakes
-- [Claude Code](https://claude.com/download) (Claude Opus 5.5): AI assistant used in VS Code for explaining TypeScript concepts, finding referance code for concepts that were not understood and spell checking work.
+- [Claude Code](https://claude.com/download) (Claude Opus 5.5): AI assistant used in VS Code for explaining TypeScript concepts, finding reference code for concepts that were not understood and spell checking work.
 
 ## Languages and Libraries
 - [React](https://react.dev/) (19.3.1) 
 - [React Router](https://reactrouter.com/)(8.5.1)
+- [TypeScript](https://www.typescriptlang.org/) (6.0.3)
+
 
 # Useful Websites
 
