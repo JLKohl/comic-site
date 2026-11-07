@@ -1,16 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router";
-
-function Home(){
-  return <h1>Home Page</h1>
-}
-
-function Characters(){
-  return <h1>Characters</h1>
-}
-
-function AboutComic(){
-  return <h1> About Comic </h1>
-}
+import {Home} from './pages/Home';
+import { Characters } from "./pages/Characters";
+import { AboutComic } from "./pages/AboutComic";
 
 function App() {
   return (
