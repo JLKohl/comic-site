@@ -19,8 +19,19 @@ export function Home(){
 
   return (
     <main>
-      <select onChange={e => getComicDetails(Number(e.target.value)).then(setSelectedComic)}>
-        <option value="">Pick a comic</option>
+      
+      <select onChange={e => {
+        //if statment to lets the user reselect "pick a comic" 
+        // with out it throwing and error. It returns 
+        // an empoty string and clears the title and details
+        if (!e.target.value){
+          setSelectedComic(null);
+          return
+        }
+        getComicDetails(Number(e.target.value))
+        .then(setSelectedComic)}}>
+
+      <option value="">Pick a comic</option>
         {/* builds an option for each comic. */}
         {comics.map(comic => (
           <option key={comic.comicId} value={comic.comicId}> {comic.title} </option>
@@ -28,9 +39,9 @@ export function Home(){
       </select>
         {selectedComic && (
           <div>
-            <h2>{selectedComic?.comic.title}</h2>
+            <h2>{selectedComic.comic.title}</h2>
             <p>image coming soon</p>
-            <p>{selectedComic?.comic.description ?? `No description for "${selectedComic?.comic.title}" yet`}</p>
+            <p>{selectedComic.comic.description ?? `No description for "${selectedComic?.comic.title}" yet`}</p>
           </div>
         )}
     </main>
