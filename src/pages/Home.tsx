@@ -8,18 +8,29 @@ export function Home(){
   const [comics, setComics] = useState<Comic[]>([]); //makes a state that starts as an empty list
   const [selectedComic, setSelectedComic] = useState<Details | null>(null);
 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
   //runs the code one time when the page first loads
   useEffect(() =>{
-    getComics().then(comics => {
+    getComics()
+    .then(comics => {
       comics.sort((first, second) => (first.episode ?? 0) - (second.episode ?? 0));
       setComics(comics);//fetches the information and then saves the result into a state
-    });
+    })
+    .catch(() => setError("Looks like the kids have run off with the page! Try again later!" ))
+    .finally(() => setLoading(false));
+ 
   }, []);
 
 
   return (
     <main>
-      
+      {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
+
+      {/* drop bar will not show up if the page throws an error */}
+      {!loading && !error && (
       <select onChange={e => {
         //if statment to lets the user reselect "pick a comic" 
         // with out it throwing and error. It returns 
@@ -37,6 +48,8 @@ export function Home(){
           <option key={comic.comicId} value={comic.comicId}> {comic.title} </option>
         ))}
       </select>
+      )}
+
         {selectedComic && (
           <div>
             <h2>{selectedComic.comic.title}</h2>
