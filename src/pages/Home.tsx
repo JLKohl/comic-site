@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { getComics } from "../api/comicAPI";
+import { getComicDetails, getComics } from "../api/comicAPI";
 import { Comic } from "../model/comic";
+import { Details }  from "../model/details";
 
 export function Home(){
   
   const [comics, setComics] = useState<Comic[]>([]); //makes a state that starts as an empty list
+  const [selectedComic, setSelectedComic] = useState<Details | null>(null);
 
   //runs the code one time when the page first loads
   useEffect(() =>{
@@ -16,13 +18,22 @@ export function Home(){
 
 
   return (
-    <select>
-      <option value="">Pick a comic</option>
-      {/* builds an option for each comic. */}
-      {comics.map(comic => (
-        <option key={comic.comicId} value={comic.comicId}> {comic.title} </option>
-      ))}
-    </select>
+    <main>
+      <select onChange={e => getComicDetails(Number(e.target.value)).then(setSelectedComic)}>
+        <option value="">Pick a comic</option>
+        {/* builds an option for each comic. */}
+        {comics.map(comic => (
+          <option key={comic.comicId} value={comic.comicId}> {comic.title} </option>
+        ))}
+      </select>
+        {selectedComic && (
+          <div>
+            <h2>{selectedComic?.comic.title}</h2>
+            <p>image coming soon</p>
+            <p>{selectedComic?.comic.description ?? `No description for "${selectedComic?.comic.title}" yet`}</p>
+          </div>
+        )}
+    </main>
   );
 
 }
