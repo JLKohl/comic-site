@@ -18,7 +18,7 @@ export function Home(){
   return (
     <select>
       <option value="">Pick a comic</option>
-      {/* builds and option for each comic. */}
+      {/* builds an option for each comic. */}
       {comics.map(comic => (
         <option key={comic.comicId} value={comic.comicId}> {comic.title} </option>
       ))}
