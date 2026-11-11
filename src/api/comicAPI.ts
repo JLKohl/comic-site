@@ -11,7 +11,7 @@ export async function getComics(): Promise<Comic[]> {
 
     if (!response.ok) {
     throw new Error(`Not found (${response.status})`);
-}
+    }
 
     const data: ComicData[] = await response.json();
     return data.map(data=> new Comic(data));
