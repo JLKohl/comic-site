@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import { getCharacter } from "../api/characterAPI";
 import type { Character } from "../model/character";
 
@@ -25,6 +25,8 @@ export function CharacterDetails() {
             {character && <h2>{character.name}</h2>}
             {character && <p>Age: {character.age ?? "This person seems to be missing an age."}</p>}
             {character && <p>Description: {character.description ?? "Sorry there is no description yet"}</p>}
+
+            <Link to="/characters">Black to Characters</Link> 
         </main>
     )
 }

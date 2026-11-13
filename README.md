@@ -44,6 +44,6 @@ To run: start the C# API, then `npm install` and `npm start`, and open http://lo
 <!-- # Future Work
 
 {Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
+* Admin side with Google sign in.
 * Item 2
-* Item 3 -->
+* Add pictures to name links in chartures as cards so that the pictures can be clicked on instead of just the name -->

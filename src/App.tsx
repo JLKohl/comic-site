@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router";
 import {Home} from './pages/Home';
 import { Characters } from "./pages/Characters";
 import { AboutComic } from "./pages/AboutComic";
@@ -8,9 +8,9 @@ function App() {
   return (
     <BrowserRouter>
     <nav>
-      <Link to="/">Home</Link>
-      <Link to="/characters">Characters</Link>
-      <Link to="/about-comic">About Comic</Link>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/characters">Characters</NavLink>
+      <NavLink to="/about-comic">About Comic</NavLink>
     </nav>
 
     <Routes>
