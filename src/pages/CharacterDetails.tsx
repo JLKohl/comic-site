@@ -16,8 +16,12 @@ export function CharacterDetails() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
+    //useEffect runs after the page loads and again when the id changes.
+    //useEffect runs code like fetching after the page shows up
     useEffect(() => {
         getCharacter(Number(id))
+        //using .then tells the code what to do when the answer arrives
+        //does the same job as await
         .then(setCharacter)
         .catch(() => setError("Looks like the kids have run off with the page! Try again later!" ))
         .finally(() => setLoading(false));
@@ -32,7 +36,7 @@ export function CharacterDetails() {
             {character && <p>Age: {character.age ?? "This person seems to be missing an age."}</p>}
             {character && <p>Description: {character.description ?? "Sorry there is no description yet"}</p>}
 
-            <Link className="char-link" to="/characters">Black to Characters</Link> 
+            <Link className="char-link" to="/characters">Back to Characters</Link> 
         </main>
     )
 }
