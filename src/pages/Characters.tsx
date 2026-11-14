@@ -8,6 +8,8 @@ export function Characters(){
 
     const [characters, setCharacters] = useState<Character[]>([]);
 
+    const [search, setSearch] = useState("");
+
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -18,11 +20,22 @@ export function Characters(){
             .finally(() => setLoading(false));
     }, []);
 
+    const filteredCharacters = characters.filter(character =>
+        character.name.toLowerCase().includes(search.toLowerCase())
+    );
+
+
     return (
         <main>
+            <input
+            type="text"
+            placeholder="Search characters..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            />
             {loading && <p>Loading...</p>}
             {error && <p>{error}</p>}
-            {characters.map(character => (
+            {filteredCharacters.map(character => (
                 <p key={character.characterId}>
                     <Link className="char-link" to={`/characters/${character.characterId}`}>{character.name}</Link>
                 </p>
