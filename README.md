@@ -12,10 +12,9 @@ I have created four pages: a landing or home page that will display a comic, a p
 3. `npm start`, then open localhost:5173
 4. `npm run check` to test the API from the terminal
 
-
 # Web Pages
 
-A nav bar at the top links the Home, Characters, and About Comic pages. Clicking a character's name opens its details page, and a back link will take you back to the characters page. 
+A nav bar at the top links the Home, Characters, and About Comic pages. Clicking a character's name opens its details page, and a back link will take you back to the characters page.
 
 - **Home Page** `/`: This is the home page that displays the comics. It includes a dropdown where you can select the comic you would like to read (currently has filler content). The dropdown options and the comic details come from the comic API that was created previously.
 - **Characters** `/characters`: This page shows a list of characters that can be searched for individually in the search bar. The list is built from the API with `map()` and the search filters live as you type. When you click on a character, it will take you to the details page for that character.
@@ -36,7 +35,6 @@ A nav bar at the top links the Home, Characters, and About Comic pages. Clicking
 - [Git](https://git-scm.com/) (2.52.0): version control
 - [Claude Code](https://claude.com/download) (Claude Opus 5.5): AI assistant used in VS Code for explaining TypeScript and React concepts, finding reference code for concepts that were not understood and spell checking work.
 
-
 ## Languages and Libraries
 
 - [React](https://react.dev/) (19.3.1)
@@ -45,11 +43,11 @@ A nav bar at the top links the Home, Characters, and About Comic pages. Clicking
 
 # Useful Websites
 
-* [react.dev](https://react.dev/learn)
-* [tutorialspoint](https://www.tutorialspoint.com/reactjs/index.htm)
+- [react.dev](https://react.dev/learn)
+- [tutorialspoint](https://www.tutorialspoint.com/reactjs/index.htm)
 
 # Future Work
 
-* Admin side with Google sign-in.
-* Add actual comics to the database that can be displayed on the website.
-* Add pictures to name links in characters and character details.
+- Admin side with Google sign-in.
+- Add actual comics to the database that can be displayed on the website.
+- Add pictures to name links in characters and character details.
