@@ -3,7 +3,7 @@
 This app is continuing to work on a full stack site that I am creating for my comic "Wildly Imaginative". This site has a MySQL database, a C# API and a TypeScript front end that runs with React.
 I have created four pages: a landing or home page that will display a comic, a page that lists the characters with hyperlinks to their own details pages, a details page that shows information about the characters, and an about page with general information about the comic.
 
-<!-- [Software Demo Video](http://youtube.link.goes.here) -->
+[Software Demo Video](https://youtu.be/dZFpv07b8UY?si=jameeP4Dwl0Xwukx)
 
 ## How to Run
 
