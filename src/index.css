@@ -1,0 +1,29 @@
+nav {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+    padding: 0.5rem .5rem;
+    border-radius: 6px;
+}
+
+nav a:hover {
+    background-color: azure;
+}
+
+nav a.active {
+    font-weight: bold;   
+}
+
+.char-link {
+    text-decoration: none;
+    color: rgb(163, 100, 22);
+}
+
+.char-link:hover {
+    font-weight: bold;
+}

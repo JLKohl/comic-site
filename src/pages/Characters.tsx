@@ -24,7 +24,7 @@ export function Characters(){
             {error && <p>{error}</p>}
             {characters.map(character => (
                 <p key={character.characterId}>
-                    <Link to={`/characters/${character.characterId}`}>{character.name}</Link>
+                    <Link className="char-link" to={`/characters/${character.characterId}`}>{character.name}</Link>
                 </p>
             ))}
         </main>

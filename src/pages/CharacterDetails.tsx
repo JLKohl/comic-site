@@ -26,7 +26,7 @@ export function CharacterDetails() {
             {character && <p>Age: {character.age ?? "This person seems to be missing an age."}</p>}
             {character && <p>Description: {character.description ?? "Sorry there is no description yet"}</p>}
 
-            <Link to="/characters">Black to Characters</Link> 
+            <Link className="char-link" to="/characters">Black to Characters</Link> 
         </main>
     )
 }
