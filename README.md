@@ -1,18 +1,17 @@
 # Overview
 
-<!--
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
-
-{Provide a description the web app that you wrote. Describe how to start a test server on your computer and what website to open up to see the first page of the app.} -->
-
-This app is continuing to work on my full stack site that I am creating for my comic website. This site has a MySQL database, a C# API and a TypeScript front end that runs with React.
-I have created four pages: a landing or home page that will display a comic, a page with information about the characters, and a page with general information about the comic itself.
+This app is continuing to work on a full stack site that I am creating for my comic "Wildly Imaginative". This site has a MySQL database, a C# API and a TypeScript front end that runs with React.
+I have created four pages: a landing or home page that will display a comic, a page that lists the characters with hyperlinks to their own details pages, a details page that shows information about the characters, and an about page with general information about the comic.
 
 <!-- [Software Demo Video](http://youtube.link.goes.here) -->
 
-## How to start
+## How to Run
 
-To run: start the C# API, then `npm install` and `npm start`, and open http://localhost:5173
+1. Set up and start the [Comic API](https://github.com/JLKohl/ComicApi). Follow its **Getting Started** steps.
+2. `npm install`
+3. `npm start`, then open localhost:5173
+4. `npm run check` to test the API from the terminal
+
 
 # Web Pages
 
@@ -31,7 +30,12 @@ A nav bar at the top links the Home, Characters, and About Comic pages. Clicking
 - [npm](https://www.npmjs.com/) (11.17.0): installs packages
 - [Vite](https://vite.dev/) (8.3.5): dev server and build tool
 - [ESLint](https://eslint.org/) (10.14.0): checks code for mistakes
-- [Claude Code](https://claude.com/download) (Claude Opus 5.5): AI assistant used in VS Code for explaining TypeScript concepts, finding reference code for concepts that were not understood and spell checking work.
+- [.NET SDK](https://dotnet.microsoft.com/download) (10.0.101): runs the C# API
+- [MySQL](https://www.mysql.com/) (26.7.0): database for the comics and characters
+- [VS Code](https://code.visualstudio.com/) (1.140.1): code editor
+- [Git](https://git-scm.com/) (2.52.0): version control
+- [Claude Code](https://claude.com/download) (Claude Opus 5.5): AI assistant used in VS Code for explaining TypeScript and React concepts, finding reference code for concepts that were not understood and spell checking work.
+
 
 ## Languages and Libraries
 
@@ -41,11 +45,11 @@ A nav bar at the top links the Home, Characters, and About Comic pages. Clicking
 
 # Useful Websites
 
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [react.dev](https://react.dev/learn)
+* [tutorialspoint](https://www.tutorialspoint.com/reactjs/index.htm)
 
 # Future Work
 
 * Admin side with Google sign-in.
-* Item 2
-* Add pictures to name links in characters as cards so that the pictures can be clicked on instead of just the name.
+* Add actual comics to the database that can be displayed on the website.
+* Add pictures to name links in characters and character details.
