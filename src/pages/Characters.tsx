@@ -20,6 +20,9 @@ export function Characters(){
             .finally(() => setLoading(false));
     }, []);
 
+    //creating a search bar that will filter through the charactures.
+    //everything is changed to lower case in the search to 
+    // allow for less user error
     const filteredCharacters = characters.filter(character =>
         character.name.toLowerCase().includes(search.toLowerCase())
     );
@@ -31,7 +34,7 @@ export function Characters(){
             type="text"
             placeholder="Search characters..."
             value={search}
-            onChange={e => setSearch(e.target.value)}
+            onChange={e => setSearch(e.target.value)} 
             />
             {loading && <p>Loading...</p>}
             {error && <p>{error}</p>}

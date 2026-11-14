@@ -5,6 +5,12 @@ import type { Character } from "../model/character";
 
 export function CharacterDetails() {
     const {id} = useParams();
+    // useState is a React hook that remembers a value
+    // and updates the page when the value changes.
+    // This allows React to re-render the component
+    // so the page can update itself in real time.
+    // "set" functions that come from useState
+    // tell React to re-run the component.
     const [character, setCharacter] = useState<Character | null>(null);
 
     const [loading, setLoading] = useState(true);
