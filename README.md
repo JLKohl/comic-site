@@ -36,7 +36,7 @@ A nav bar at the top links the Home, Characters, and About Comic pages. Clicking
 ## Languages and Libraries
 
 - [React](https://react.dev/) (19.3.1)
-- [React Router](https://reactrouter.com/)(8.5.1)
+- [React Router](https://reactrouter.com/) (8.5.1)
 - [TypeScript](https://www.typescriptlang.org/) (6.0.3)
 
 # Useful Websites
