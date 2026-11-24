@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { createComic } from "../api/adminApi";
+import { EditComicForm } from "../components/EditComicForm";
+
 
 export function Admin (){
     const [title, setTitle] = useState("");
@@ -42,11 +44,15 @@ export function Admin (){
                 <button type="submit">Add my Comic</button>
             </form>
 
+            <EditComicForm />
+
             {message && <p>{message}</p>}
 
         </main>
     );
 
+    
 
+    
     
 }
