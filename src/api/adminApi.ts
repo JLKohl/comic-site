@@ -39,9 +39,26 @@ export async function updateComic(id: number, title: string, description: string
         body: JSON.stringify({title, description, episode}),
     });
 
-      if (!response.ok) {
-    throw new Error(`Could not update your comic (${response.status})`);
-  }
+    if (!response.ok) {
+        throw new Error(`Could not update your comic (${response.status})`);
+    }
 
   return response.json();
+}
+
+export async function deleteComic(id:number) {
+    
+    const response = await fetch(`${API_URL}/comics/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Bearer ${TOKEN}`
+        },
+    });
+
+    if (!response.ok) {
+        throw new Error(`Could not delete your comic (${response.status})`);
+    }
+
+    return response.json();
+
 }
