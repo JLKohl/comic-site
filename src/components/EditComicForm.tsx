@@ -59,6 +59,18 @@ export function EditComicForm(){
     e.preventDefault();
     if (editId === null) return; // nothing picked yet
 
+    //making sure the title is not empty
+    if (title.trim() === "") {
+        setMessage("Title is required.");
+        return;
+    }
+
+    //making sure that the number can not be negative
+    if ( episode !== "" && Number(episode) < 0) {
+        setMessage("Episode can't be negative.");
+        return;
+    }
+
     updateComic(editId, title, description ? String(description) : null, episode ? Number(episode) : null)
         .then(() => {
             setMessage("Comic updated!");
@@ -79,7 +91,7 @@ export function EditComicForm(){
             })
             .catch(() => setMessage("Could not delete comic."));
     
-    } 
+    }
 
     return(
     <div>

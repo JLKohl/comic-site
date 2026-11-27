@@ -12,15 +12,26 @@ export function Admin (){
     function handleSubmit(e: React.SubmitEvent<HTMLFormElement>){
         e.preventDefault();//prevents page from reloading 
 
+        if (title.trim() === "") {
+            setMessage("Title is required.");
+            return; //stop the code and don't save the empty title
+        }
+
+            //making sure that the number can not be negative
+        if ( episode !== "" && Number(episode) < 0) {
+            setMessage("Episode can't be negative.");
+            return;
+        }
+
         createComic(title, description ? String(description) : null, episode ? Number(episode) : null)
             .then(() => {
-                setMessage("Comic Succesdfully added");
+                setMessage("Comic successfully added.");
                 setTitle("");
                 setDescription("");
                 setEpisode("");
             })
             .catch(() => setMessage("Could not add comic."));
-    }
+        }
 
     return (
         <main>
