@@ -62,3 +62,60 @@ export async function deleteComic(id:number) {
     return response.json();
 
 }
+
+//character functions
+export async function createCharacter(name: string, age: number | null , gender : string | null, description : string | null ) {
+    
+    const response = await fetch(`${API_URL}/characters`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${TOKEN}`,
+        },
+   
+        body: JSON.stringify({name, age, gender, description}),
+    });
+
+    if (!response.ok){
+        throw new Error(`Could not add character (${response.status})`);
+    }
+
+    return response.json();
+
+}
+
+export async function updateCharacter(id: number, name: string, age: number | null , gender : string | null, description : string | null ) {
+        
+    const response = await fetch(`${API_URL}/characters/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${TOKEN}`,
+        },
+
+        body: JSON.stringify({name, age, gender, description}),
+    });
+
+    if (!response.ok) {
+        throw new Error(`Could not update your Character (${response.status})`);
+    }
+
+  return response.json();
+}
+
+export async function deleteCharacter(id:number) {
+    
+    const response = await fetch(`${API_URL}/characters/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Bearer ${TOKEN}`
+        },
+    });
+
+    if (!response.ok) {
+        throw new Error(`Could not delete your character (${response.status})`);
+    }
+
+    return response.json();
+
+}

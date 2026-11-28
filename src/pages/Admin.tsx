@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createComic } from "../api/adminApi";
 import { EditComicForm } from "../components/EditComicForm";
+import { AddCharacter } from "../components/AddCharacterForm";
 
 
 export function Admin (){
@@ -56,6 +57,7 @@ export function Admin (){
             </form>
 
             <EditComicForm />
+            <AddCharacter />
 
             {message && <p>{message}</p>}
 
